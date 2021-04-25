@@ -19,7 +19,7 @@ The primary intended use of MetaStats API is creating trade monitoring applicati
 ## Pricing
 MetaStats is available to all MetaApi users without extra charges at this point.
 
-You pay only an affordable fee for MetaApi MetaTrader terminal hosting. See [https://metaapi.cloud/#pricing](https://metaapi.cloud/#pricing) for more details.
+You pay a fee executing MetaTrader terminal on MetaApi cloud. See [https://metaapi.cloud/#pricing](https://metaapi.cloud/#pricing) for more details.
 
 MetaApi provides a free tier so that you can test our APIs without any charges.
 
@@ -80,6 +80,9 @@ System.out.println(metaStats.getMetrics(accountId).join());
 System.out.println(metaStats.getMetrics(accountId, true).join());
 ```
 
+## Quotas and rate limits
+API calls you make are subject to rate limits. See [https://metaapi.cloud/docs/metastats/rateLimiting/](https://metaapi.cloud/docs/metastats/rateLimiting/) for more details.
+
 ## Related projects:
 See our website for the full list of APIs and features supported [https://metaapi.cloud/#features](https://metaapi.cloud/#features)
 
@@ -87,3 +90,4 @@ Some of the APIs you might decide to use together with this module:
 
 1. MetaApi cloud forex trading API [https://metaapi.cloud/docs/client/](https://metaapi.cloud/docs/client/)
 2. CopyFactory copy trading  API [https://metaapi.cloud/docs/copyfactory/](https://metaapi.cloud/docs/copyfactory/)
+3. MetaTrader account management API [https://metaapi.cloud/docs/provisioning/](https://metaapi.cloud/docs/provisioning/)
