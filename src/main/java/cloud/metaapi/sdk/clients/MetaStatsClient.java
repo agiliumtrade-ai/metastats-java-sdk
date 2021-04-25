@@ -741,10 +741,17 @@ public class MetaStatsClient {
      */
     public Double sharpeRatio;
     /**
-     * Statistical measure of volatility shows how much variation or dispersion there is
-     * from the mean profit in basic currency, or {@code null}
+     * Differentiates harmful volatility from total overall volatility, or {@code null}
      */
-    public Double standardDeviation;
+    public Double sortinoRatio;
+    /**
+     * Statistical measure of volatility shows how much variation or dispersion, or {@code null}
+     */
+    public Double standardDeviationProfit;
+    /**
+     * A statistical measure that is used to describe profit distribution, or {@code null}
+     */
+    public Double kurtosisProfit;
     /**
      * Average holding period return, or {@code null}
      */
