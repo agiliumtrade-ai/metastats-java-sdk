@@ -36,8 +36,8 @@
   <dependencies>
     <dependency>
       <groupId>cloud.metaapi.sdk</groupId>
-      <artifactId>metaapi-metastats-sdk</artifactId>
-      <version>1.0.0</version>
+      <artifactId>metaapi-java-sdk</artifactId>
+      <version>[13.0.0,)</version>
     </dependency>
   </dependencies>
 </project>

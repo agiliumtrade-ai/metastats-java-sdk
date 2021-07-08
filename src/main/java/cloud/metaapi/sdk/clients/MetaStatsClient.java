@@ -255,13 +255,13 @@ public class MetaStatsClient {
      */
     public Double gains;
     /**
-     * Total profit in this day end
+     * Total profit in this day end, or {@code null}
      */
-    public double totalProfit;
+    public Double totalProfit;
     /**
-     * Total gains in this day end
+     * Total gains in this day end, or {@code null}
      */
-    public double totalGains;
+    public Double totalGains;
     /**
      * Balance in this day end
      */
@@ -789,6 +789,10 @@ public class MetaStatsClient {
      * or {@code null}
      */
     public Double probability;
+    /**
+     * The number of days that have passed since the opening of the first trade, or {@code null}
+     */
+    public Integer daysSinceTradingStarted;
     /**
      * Currency trading summary, or {@code null}
      */
