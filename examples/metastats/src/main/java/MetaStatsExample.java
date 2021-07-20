@@ -1,4 +1,3 @@
-import java.io.IOException;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
@@ -39,9 +38,10 @@ public class MetaStatsExample {
       }
       
       Metrics metrics = metaStats.getMetrics(accountId).join();
-      System.out.println(asJson(metrics).substring(0, 200) + "..."); //-> {trades: ..., balance: ..., ...}
+      String jsonMetrics = asJson(metrics); //-> {trades: ..., balance: ..., ...}
+      System.out.println(jsonMetrics.substring(0, Math.min(200, jsonMetrics.length())));
     } catch (Exception err) {
-      System.err.println(err);
+      err.printStackTrace();
     }
     System.exit(0);
   }
