@@ -2,9 +2,13 @@ package cloud.metaapi.sdk;
 
 import java.util.concurrent.CompletableFuture;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import cloud.metaapi.sdk.clients.HttpClient;
 import cloud.metaapi.sdk.clients.MetaStatsClient;
 import cloud.metaapi.sdk.clients.RetryOptions;
+import cloud.metaapi.sdk.clients.error_handler.ValidationException;
 import cloud.metaapi.sdk.clients.MetaStatsClient.Metrics;
 
 /**
@@ -12,6 +16,7 @@ import cloud.metaapi.sdk.clients.MetaStatsClient.Metrics;
  */
 public class MetaStats {
   
+  private static Logger logger = LogManager.getLogger(MetaStats.class);
   private MetaStatsClient metaStatsClient;
   
   /**
@@ -41,17 +46,21 @@ public class MetaStats {
    * @param token authorization token
    */
   public MetaStats(String token) {
-    this(token, new ConnectionOptions());
+    try {
+      initialize(token, null);
+    } catch (ValidationException e) {
+      logger.error("Specified options are invalid", e);
+    }
   }
   
   /**
    * Constructs MetaStats class instance
    * @param token authorization token
    * @param opts connection options
+   * @throws ValidationException if specified options are invalid
    */
-  public MetaStats(String token, ConnectionOptions opts) {
-    HttpClient httpClient = new HttpClient(opts.requestTimeout * 1000, opts.connectTimeout * 1000, opts.retryOpts);
-    metaStatsClient = new MetaStatsClient(httpClient, token, opts.domain);
+  public MetaStats(String token, ConnectionOptions opts) throws ValidationException {
+    initialize(token, opts);
   }
 
   /**
@@ -73,5 +82,10 @@ public class MetaStats {
    */
   public CompletableFuture<Metrics> getMetrics(String accountId, boolean includeOpenPositions) {
     return metaStatsClient.getMetrics(accountId, includeOpenPositions);
+  }
+  
+  private void initialize(String token, ConnectionOptions opts) throws ValidationException {
+    HttpClient httpClient = new HttpClient(opts.requestTimeout * 1000, opts.connectTimeout * 1000, opts.retryOpts);
+    metaStatsClient = new MetaStatsClient(httpClient, token, opts.domain);
   }
 }
