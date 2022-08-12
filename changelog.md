@@ -1,3 +1,6 @@
+2.0.1
+  - fixed dependency vulnerabilities
+
 2.0.0
   - breaking change: fixed integrity of common class interfaces between MetaApi SDKs
 
