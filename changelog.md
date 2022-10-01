@@ -1,3 +1,6 @@
+2.0.2
+  - fixed MetaStats constructor with default options
+
 2.0.1
   - fixed dependency vulnerabilities
 
