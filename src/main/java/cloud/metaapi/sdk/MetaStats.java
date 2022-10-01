@@ -47,7 +47,7 @@ public class MetaStats {
    */
   public MetaStats(String token) {
     try {
-      initialize(token, null);
+      initialize(token, new ConnectionOptions());
     } catch (ValidationException e) {
       logger.error("Specified options are invalid", e);
     }
