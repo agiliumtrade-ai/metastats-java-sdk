@@ -1,4 +1,7 @@
 # MetaStats forex metrics API
+
+Note: The Java SDK was updated long time ago and lacks important bugfixes and updates. We plan to update the java SDK soon. Meanwhile we recommend you to use javascript or python SDK instead. 
+
 MetaStats is a fast, cost-efficient, easy to use and standards-driven cloud forex trading statistics API supporting both MetaTrader 4 and MetaTrader 5 platforms designed to boost forex application development process.
 
 Using MetaStats API you can develop applications similar to Myfxbook or MetriX extremely fast, saving time you otherwise spend for coding, optimizing and testing your own trading metrics calculation engine, since we already did it for you.
@@ -42,11 +45,11 @@ If you use Apache Maven, add this to `<dependencies>` in your `pom.xml`:
 <dependency>
   <groupId>cloud.metaapi.sdk</groupId>
   <artifactId>metaapi-java-sdk</artifactId>
-  <version>13.0.0</version>
+  <version>14.0.0</version>
 </dependency>
 ```
 
-Other options can be found on [this page](https://search.maven.org/artifact/cloud.metaapi.sdk/metaapi-java-sdk/13.0.0/jar).
+Other options can be found on [this page](https://search.maven.org/artifact/cloud.metaapi.sdk/metaapi-java-sdk/14.0.0/jar).
 
 ### Running examples
 In order to run the examples, follow these steps:
