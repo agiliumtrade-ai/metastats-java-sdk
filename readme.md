@@ -27,7 +27,7 @@ You pay a fee executing MetaTrader terminal on MetaApi cloud. See [https://metaa
 MetaApi provides a free tier so that you can test our APIs without any charges.
 
 ## Frequently asked questions (FAQ)
-FAQ is located here: [http://metaapi.cloud/docs/metastats/faq](http://metaapi.cloud/docs/metastats/faq)
+FAQ is located here: [https://metaapi.cloud/faq#meta-stats](https://metaapi.cloud/faq#meta-stats)
 
 ## REST API documentation
 MetaStats SDK is built on top of MetaStats REST API.
